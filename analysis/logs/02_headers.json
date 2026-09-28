@@ -1,0 +1,106 @@
+[
+  {
+    "sample": "hydra01.eml",
+    "from": "Aurora HR <hr@auroralogistics.in>",
+    "reply_to": "hr.verify@aurora-hrportal.net",
+    "origin_hop": "mail.hydrapey.net (45.142.213.107)",
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail",
+    "dmarc_policy": "none",
+    "urls": [
+      "http://aurora-hrportal.net/login?u=priya.nair@auroralogistics.in"
+    ],
+    "tells": [
+      "Reply-To off-domain (aurora-hrportal.net) [harvest destination]",
+      "SPF hard fail [-all policy violated]",
+      "DKIM absent",
+      "DMARC fail but p=none -> no enforcement (root cause)",
+      "X-Mailer PHPMailer -> scripted mass-mailer"
+    ],
+    "verdict": "PHISHING/SPOOFED"
+  },
+  {
+    "sample": "hydra02.eml",
+    "from": "IT Helpdesk <support@auroralogistics-support.com>",
+    "reply_to": "support.verify@auroralogistics-support.com",
+    "origin_hop": "mail.hydrapey.net (45.142.213.107)",
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "none",
+    "dmarc_policy": "-",
+    "urls": [
+      "https://auroralogistics-support.com/sso/reset?u=v.rao@auroralogistics.in"
+    ],
+    "tells": [
+      "SPF hard fail [-all policy violated]",
+      "DKIM absent",
+      "X-Mailer PHPMailer -> scripted mass-mailer"
+    ],
+    "verdict": "PHISHING/SPOOFED"
+  },
+  {
+    "sample": "hydra03.eml",
+    "from": "Payroll Team <payroll@auroralogistics.in>",
+    "reply_to": "payroll.verify@aurora-hrportal.net",
+    "origin_hop": "mail.hydrapey.net (45.142.213.107)",
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail",
+    "dmarc_policy": "none",
+    "urls": [
+      "http://aurora-hrportal.net/collect",
+      "http://aurora-hrportal.net/payslip?u=r.desai@auroralogistics.in"
+    ],
+    "tells": [
+      "Reply-To off-domain (aurora-hrportal.net) [harvest destination]",
+      "SPF hard fail [-all policy violated]",
+      "DKIM absent",
+      "DMARC fail but p=none -> no enforcement (root cause)",
+      "X-Mailer PHPMailer -> scripted mass-mailer"
+    ],
+    "verdict": "PHISHING/SPOOFED"
+  },
+  {
+    "sample": "hydra04.eml",
+    "from": "Travel Desk <travel@auroralogistics.in>",
+    "reply_to": "travel.verify@aurora-hrportal.net",
+    "origin_hop": "mail.hydrapey.net (45.142.213.107)",
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail",
+    "dmarc_policy": "none",
+    "urls": [
+      "https://bit.ly/3hydraX"
+    ],
+    "tells": [
+      "Reply-To off-domain (aurora-hrportal.net) [harvest destination]",
+      "SPF hard fail [-all policy violated]",
+      "DKIM absent",
+      "DMARC fail but p=none -> no enforcement (root cause)",
+      "X-Mailer PHPMailer -> scripted mass-mailer"
+    ],
+    "verdict": "PHISHING/SPOOFED"
+  },
+  {
+    "sample": "hydra05.eml",
+    "from": "Nodal Officer <compliance@auroralogistics.in>",
+    "reply_to": "kyc.verify@auroralogistics-support.com",
+    "origin_hop": "mail.hydrapey.net (45.142.213.107)",
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail",
+    "dmarc_policy": "none",
+    "urls": [
+      "https://auroralogistics-support.com/kyc?org=AuroraLogistics"
+    ],
+    "tells": [
+      "Reply-To off-domain (auroralogistics-support.com) [harvest destination]",
+      "SPF hard fail [-all policy violated]",
+      "DKIM absent",
+      "DMARC fail but p=none -> no enforcement (root cause)",
+      "X-Mailer PHPMailer -> scripted mass-mailer"
+    ],
+    "verdict": "PHISHING/SPOOFED"
+  }
+]

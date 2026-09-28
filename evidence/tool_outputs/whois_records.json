@@ -1,0 +1,60 @@
+{
+  "note": "Simulated WHOIS records (2026-03-16 lookup). Academic use only.",
+  "records": [
+    {
+      "domain": "auroralogistics.in",
+      "created": "2011-06-02",
+      "updated": "2025-08-14",
+      "expires": "2030-06-02",
+      "registrar": "GoDaddy.com, LLC (IANA 146)",
+      "registrant_org": "Aurora Logistics Pvt. Ltd.",
+      "registrant_country": "IN",
+      "privacy_proxy": false,
+      "ns": ["ns1.googlecloud.com", "ns2.googlecloud.com"],
+      "age_days_at_attack": 5407,
+      "verdict": "genuine corporate domain"
+    },
+    {
+      "domain": "aurora-hrportal.net",
+      "created": "2026-03-08",
+      "expires": "2027-03-08",
+      "registrar": "NameSilo, LLC (IANA 1479)",
+      "registrant_org": "PrivacyGuard DNS Service",
+      "registrant_country": "PA",
+      "privacy_proxy": true,
+      "ns": ["ns1.aurora-hrportal.net", "ns2.aurora-hrportal.net"],
+      "age_days_at_attack": 6,
+      "verdict": "SPOOF - brand-new + privacy proxy + self-hosted NS"
+    },
+    {
+      "domain": "auroralogistics-support.com",
+      "created": "2026-03-05",
+      "expires": "2027-03-05",
+      "registrar": "Namecheap, Inc. (IANA 1068)",
+      "registrant_org": "WhoisGuard, Inc.",
+      "registrant_country": "PA",
+      "privacy_proxy": true,
+      "ns": ["dns1.registrar-servers.com", "dns2.registrar-servers.com"],
+      "age_days_at_attack": 9,
+      "verdict": "SPOOF - brand-new + privacy proxy"
+    },
+    {
+      "domain": "hydrapey.net",
+      "created": "2026-01-11",
+      "expires": "2027-01-11",
+      "registrar": "Njalla (IANA 3915)",
+      "registrant_org": "Njalla privacy shell",
+      "registrant_country": "SE",
+      "privacy_proxy": true,
+      "ns": ["ns1.hydrapey.net", "ns2.hydrapey.net"],
+      "age_days_at_attack": 62,
+      "verdict": "attacker staging/bounce infrastructure"
+    }
+  ],
+  "red_flags_summary": [
+    "clone domains registered 6 and 9 days before the campaign",
+    "privacy proxies on 3 of 4 domains",
+    "registrar/NS mismatch vs the genuine corporate domain",
+    "brand-token insertion ('auroralogistics-support', 'aurora-hrportal')"
+  ]
+}

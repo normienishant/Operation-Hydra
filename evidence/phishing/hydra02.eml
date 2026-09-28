@@ -1,0 +1,18 @@
+Received: from mail.hydrapey.net (45.142.213.107) by mx.auroralogistics.in with ESMTPS id 8f2b77d1
+Received-SPF: fail (domain owner discourages this sender) client-ip=45.142.213.107;
+Authentication-Results: mx.auroralogistics.in; spf=fail smtp.mailfrom=auroralogistics-support.com; dkim=none; dmarc=none
+X-Mailer: PHPMailer 6.8.0
+Reply-To: support.verify@auroralogistics-support.com
+From: IT Helpdesk <support@auroralogistics-support.com>
+To: v.rao@auroralogistics.in
+Date: Sat, 14 Mar 2026 09:12:11 +0530
+Subject: Password expires in 24h - reset now
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+<html><body>
+<p>Your domain password expires in 24 hours. Reset immediately via the SSO portal:</p>
+<p><a href="https://auroralogistics-support.com/sso/reset?u=v.rao@auroralogistics.in">Reset password</a></p>
+<p>If you do not reset, your account will be locked at 09:00 IST, 15 Mar.</p>
+<p>IT Helpdesk, Aurora Logistics</p>
+</body></html>

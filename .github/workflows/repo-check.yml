@@ -1,0 +1,56 @@
+name: repo-check
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  structure:
+    name: directory & deliverable check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all assignment deliverables exist
+        run: python analysis/scripts/check_structure.py
+
+  analysis-suite:
+    name: analysis suite (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Byte-compile all scripts (syntax gate)
+        run: python -m compileall -q analysis/scripts builder
+
+      - name: Run full analysis suite
+        run: python analysis/scripts/run_all.py > /dev/null && echo "suite OK"
+
+      - name: Reproducibility check (logs identical on re-run)
+        run: |
+          mkdir -p /tmp/first
+          cp analysis/logs/*.log /tmp/first/
+          python analysis/scripts/run_all.py > /dev/null
+          diff -r /tmp/first analysis/logs && echo "reproducible: logs byte-identical on re-run"
+
+      - name: Build PDF report deliverable
+        run: |
+          pip install fpdf2
+          python builder/build_report.py
+
+      - name: Upload generated logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-logs-py${{ matrix.python-version }}
+          path: analysis/logs/
+          retention-days: 7

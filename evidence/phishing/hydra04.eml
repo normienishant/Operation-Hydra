@@ -1,0 +1,18 @@
+Received: from mail.hydrapey.net (45.142.213.107) by mx.auroralogistics.in with ESMTPS id 8f2d19aa
+Received-SPF: fail (domain owner discourages this sender) client-ip=45.142.213.107;
+Authentication-Results: mx.auroralogistics.in; spf=fail smtp.mailfrom=auroralogistics.in; dkim=none; dmarc=fail (p=none)
+X-Mailer: PHPMailer 6.8.0
+Reply-To: travel.verify@aurora-hrportal.net
+From: Travel Desk <travel@auroralogistics.in>
+To: a.mehta@auroralogistics.in
+Date: Sat, 14 Mar 2026 09:12:27 +0530
+Subject: Pilot duty change - confirm within 2h
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+<html><body>
+<p>Your duty roster changed on 13 Mar. Confirm acceptance within 2 hours:</p>
+<p><a href="https://bit.ly/3hydraX">Confirm duty change</a></p>
+<p><span style="font-size:9px;color:#888">link resolves to aurora-hrportal.net/duty</span></p>
+<p>Travel Desk, Aurora Logistics</p>
+</body></html>

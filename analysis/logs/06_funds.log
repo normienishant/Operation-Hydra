@@ -1,0 +1,49 @@
+==========================================================================
+STEP 06 - FINANCIAL FRAUD TRACING   [emulates bank-PSU ledger analytics + manual chain analysis]
+==========================================================================
+
+Dataset                : evidence\transactions\hydra_transactions.csv (59 rows)
+Card-not-present (CNP) :  38 txns  INR   342,900  (incl. 12 card-testing probes)
+UPI collect-request    :  13 txns  INR   278,580
+Mule transfers (IMPS)  :   8 txns  INR   932,220 (layering legs)
+
+TEMPORAL FINGERPRINT
+------------------------------------------------
+  15 Mar 10:00-12:00  12 probes  INR 101-500 each      (card testing)
+  15 Mar 02:41-02:49   9 CNP     INR 41k-49,999 each   (burst - SOC alert)
+  15 Mar 02:47-03:20  11 CNP     INR 12k-24k           (post-alert throttle)
+  15 Mar 03:20-04:00  13 UPI     INR 500-49,999        (collect-request approvals)
+  16 Mar 09:00-17:00   8 IMPS    layering to 4 mules
+
+MULE LEDGER (from layering legs)
+------------------------------------------------
+  MULE-1: INR   306,000  (HDFC ****4412 Rakesh V. - pass-through within 11 min)
+  MULE-2: INR   279,720  (ICICI ****8830 Sana K. - 7 ATM withdrawals / 40 min)
+  MULE-3: INR   196,500  (Paytm ****2170 Dummy Traders LLP - shell entity)
+  MULE-4: INR   150,000  (SBI ****7791 Imran S. - account opened 3 days pre-attack)
+
+LEDGER TRACE  victims -> mules -> P2P desk -> BTC
+------------------------------------------------
+  38 CNP + 13 UPI victim transactions  INR 621,480
+  -> MULE-1..4 receive                  INR   932,220 (incl. repeat legs)
+  -> consolidated to MULE-3             INR   5,21,480
+  -> P2P crypto desk (simulated) 2 trades
+  -> BTC bc1qhydra9f2x7k04mule7qq0wv8nzx3a9c0dpeel7  0.71 BTC
+
+PEEL CHAIN (simulated)
+------------------------------------------------
+  T+3h    0.35 BTC -> bc1q9x7hop1fake4addr5zz6789012345
+  T+9h    0.34 BTC -> bc1q9x7hop2fake4addr5zz6789012345
+  T+26h   0.33 BTC -> MIXER (endpoint deliberately undocumented)
+
+RECOVERY OUTLOOK
+------------------------------------------------
+  Frozen (MULE-1 + MULE-4, T+1)        INR   2,04,000  (33%)
+  Dissipated (ATM cash-out + mixer)    INR   4,17,480  (67%)
+
+LEGAL HOOKS
+------------------------------------------------
+  Card/UPI fraud        : IT Act S.66C/66D + BNS S.318(4)
+  Mule holders          : BNS S.316(2) CBT; PMLA S.3 layering
+  P2P desk              : PMLA S.3; US 18 U.S.C. S.1960 analogue
+  Freezing              : PMLA S.5; BNSS S.106 seizure

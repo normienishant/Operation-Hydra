@@ -1,0 +1,12 @@
+# markdownlint-cli2 configuration for Operation Hydra
+# Docs: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "default": true,
+  "MD013": false,
+  "MD024": { "siblings_only": true },
+  "MD033": { "allowed_elements": ["details", "summary", "br"] },
+  "MD041": false,
+  "MD036": false,
+  "MD060": false,
+  "MD040": false  # diagrams & simulated tool output (ASCII art) have no meaningful language
+}

@@ -1,0 +1,72 @@
+==========================================================================
+STEP 02 - HEADER / SPF / DKIM / DMARC ANALYSIS   [emulates MXToolbox Email Header Analyzer (offline clone)]
+==========================================================================
+
+--- hydra01.eml -------------------------------------------
+From      : Aurora HR <hr@auroralogistics.in>
+Reply-To  : hr.verify@aurora-hrportal.net
+Origin    : mail.hydrapey.net (45.142.213.107)
+SPF/DKIM/DMARC: fail / none / fail (p=none)
+URLs      : http://aurora-hrportal.net/login?u=priya.nair@auroralogistics.in
+TELL 1: Reply-To off-domain (aurora-hrportal.net) [harvest destination]
+TELL 2: SPF hard fail [-all policy violated]
+TELL 3: DKIM absent
+TELL 4: DMARC fail but p=none -> no enforcement (root cause)
+TELL 5: X-Mailer PHPMailer -> scripted mass-mailer
+VERDICT   : PHISHING/SPOOFED
+
+--- hydra02.eml -------------------------------------------
+From      : IT Helpdesk <support@auroralogistics-support.com>
+Reply-To  : support.verify@auroralogistics-support.com
+Origin    : mail.hydrapey.net (45.142.213.107)
+SPF/DKIM/DMARC: fail / none / none (p=-)
+URLs      : https://auroralogistics-support.com/sso/reset?u=v.rao@auroralogistics.in
+TELL 1: SPF hard fail [-all policy violated]
+TELL 2: DKIM absent
+TELL 3: X-Mailer PHPMailer -> scripted mass-mailer
+VERDICT   : PHISHING/SPOOFED
+
+--- hydra03.eml -------------------------------------------
+From      : Payroll Team <payroll@auroralogistics.in>
+Reply-To  : payroll.verify@aurora-hrportal.net
+Origin    : mail.hydrapey.net (45.142.213.107)
+SPF/DKIM/DMARC: fail / none / fail (p=none)
+URLs      : http://aurora-hrportal.net/collect
+            http://aurora-hrportal.net/payslip?u=r.desai@auroralogistics.in
+TELL 1: Reply-To off-domain (aurora-hrportal.net) [harvest destination]
+TELL 2: SPF hard fail [-all policy violated]
+TELL 3: DKIM absent
+TELL 4: DMARC fail but p=none -> no enforcement (root cause)
+TELL 5: X-Mailer PHPMailer -> scripted mass-mailer
+VERDICT   : PHISHING/SPOOFED
+
+--- hydra04.eml -------------------------------------------
+From      : Travel Desk <travel@auroralogistics.in>
+Reply-To  : travel.verify@aurora-hrportal.net
+Origin    : mail.hydrapey.net (45.142.213.107)
+SPF/DKIM/DMARC: fail / none / fail (p=none)
+URLs      : https://bit.ly/3hydraX
+TELL 1: Reply-To off-domain (aurora-hrportal.net) [harvest destination]
+TELL 2: SPF hard fail [-all policy violated]
+TELL 3: DKIM absent
+TELL 4: DMARC fail but p=none -> no enforcement (root cause)
+TELL 5: X-Mailer PHPMailer -> scripted mass-mailer
+VERDICT   : PHISHING/SPOOFED
+
+--- hydra05.eml -------------------------------------------
+From      : Nodal Officer <compliance@auroralogistics.in>
+Reply-To  : kyc.verify@auroralogistics-support.com
+Origin    : mail.hydrapey.net (45.142.213.107)
+SPF/DKIM/DMARC: fail / none / fail (p=none)
+URLs      : https://auroralogistics-support.com/kyc?org=AuroraLogistics
+TELL 1: Reply-To off-domain (auroralogistics-support.com) [harvest destination]
+TELL 2: SPF hard fail [-all policy violated]
+TELL 3: DKIM absent
+TELL 4: DMARC fail but p=none -> no enforcement (root cause)
+TELL 5: X-Mailer PHPMailer -> scripted mass-mailer
+VERDICT   : PHISHING/SPOOFED
+
+--------------------------------------------------------------------------
+SUMMARY: 5/5 samples classified PHISHING/SPOOFED
+Root cause chain: spoofed From <- PHPMailer relay (hydrapey.net, NL)
+                  + DMARC p=none on auroralogistics.in (no enforcement)

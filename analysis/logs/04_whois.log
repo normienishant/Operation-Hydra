@@ -1,0 +1,44 @@
+==========================================================================
+STEP 04 - WHOIS / DOMAIN INTELLIGENCE   [emulates whois CLI + registrar RDAP]
+==========================================================================
+
+Domain       : auroralogistics.in
+  Created    : 2011-06-02   (age at attack: 5407 days / 5401 days since)
+  Registrar  : GoDaddy.com, LLC (IANA 146)
+  Registrant : Aurora Logistics Pvt. Ltd. (IN)
+  Privacy    : no
+  Nameservers: ns1.googlecloud.com, ns2.googlecloud.com
+  Verdict    : genuine corporate domain
+
+Domain       : aurora-hrportal.net
+  Created    : 2026-03-08   (age at attack: 6 days / 8 days since)
+  Registrar  : NameSilo, LLC (IANA 1479)
+  Registrant : PrivacyGuard DNS Service (PA)
+  Privacy    : YES - proxy registration
+  Nameservers: ns1.aurora-hrportal.net, ns2.aurora-hrportal.net
+  Verdict    : SPOOF - brand-new + privacy proxy + self-hosted NS
+
+Domain       : auroralogistics-support.com
+  Created    : 2026-03-05   (age at attack: 9 days / 11 days since)
+  Registrar  : Namecheap, Inc. (IANA 1068)
+  Registrant : WhoisGuard, Inc. (PA)
+  Privacy    : YES - proxy registration
+  Nameservers: dns1.registrar-servers.com, dns2.registrar-servers.com
+  Verdict    : SPOOF - brand-new + privacy proxy
+
+Domain       : hydrapey.net
+  Created    : 2026-01-11   (age at attack: 62 days / 64 days since)
+  Registrar  : Njalla (IANA 3915)
+  Registrant : Njalla privacy shell (SE)
+  Privacy    : YES - proxy registration
+  Nameservers: ns1.hydrapey.net, ns2.hydrapey.net
+  Verdict    : attacker staging/bounce infrastructure
+
+RED-FLAG SUMMARY
+  - clone domains registered 6 and 9 days before the campaign
+  - privacy proxies on 3 of 4 domains
+  - registrar/NS mismatch vs the genuine corporate domain
+  - brand-token insertion ('auroralogistics-support', 'aurora-hrportal')
+
+RULE OF THUMB: domain age < 30 days + privacy proxy + brand token in name
+              => treat as hostile until proved otherwise (passive DNS next).

@@ -1,0 +1,18 @@
+Received: from mail.hydrapey.net (45.142.213.107) by mx.auroralogistics.in with ESMTPS id 8f2e071b
+Received-SPF: fail (domain owner discourages this sender) client-ip=45.142.213.107;
+Authentication-Results: mx.auroralogistics.in; spf=fail smtp.mailfrom=auroralogistics.in; dkim=none; dmarc=fail (p=none)
+X-Mailer: PHPMailer 6.8.0
+Reply-To: kyc.verify@auroralogistics-support.com
+From: Nodal Officer <compliance@auroralogistics.in>
+To: finance@auroralogistics.in
+Date: Sat, 14 Mar 2026 09:12:35 +0530
+Subject: KYC re-verification before 31 Mar - mandatory
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+<html><body>
+<p>As per RBI mandate, vendor and payroll KYC must be re-verified before 31 Mar 2026.</p>
+<p><a href="https://auroralogistics-support.com/kyc?org=AuroraLogistics">Complete KYC</a></p>
+<p>Non-compliance will pause all vendor payments.</p>
+<p>Nodal Officer, Aurora Logistics</p>
+</body></html>

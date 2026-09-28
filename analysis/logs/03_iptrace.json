@@ -1,0 +1,38 @@
+{
+  "45.142.213.107": {
+    "rdns": "mail.hydrapey.net",
+    "asn": "AS208475",
+    "cc": "NL",
+    "isp": "HydraNet Hosting B.V.",
+    "score": 96,
+    "reports": 311,
+    "role": "phishing mail relay / bounce laundering"
+  },
+  "185.220.101.47": {
+    "rdns": "tor-exit-47.hydrapey.net",
+    "asn": "AS205100",
+    "cc": "RO",
+    "isp": "HydraTor Transit",
+    "score": 88,
+    "reports": 214,
+    "role": "HydraRAT C2 + Tor exit (dual use)"
+  },
+  "103.87.12.90": {
+    "rdns": "ns1.aurora-hrportal.net",
+    "asn": "AS135318",
+    "cc": "IN",
+    "isp": "PuneHost Cloud",
+    "score": 74,
+    "reports": 96,
+    "role": "clone-portal hosting (aurora-hrportal.net)"
+  },
+  "91.215.85.21": {
+    "rdns": "cdn.auroralogistics-support.com",
+    "asn": "AS204601",
+    "cc": "UA",
+    "isp": "DniproHost LLC",
+    "score": 81,
+    "reports": 142,
+    "role": "kit CDN / MITM proxy endpoint"
+  }
+}

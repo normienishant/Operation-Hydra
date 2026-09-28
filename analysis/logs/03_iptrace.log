@@ -1,0 +1,35 @@
+==========================================================================
+STEP 03 - IP TRACE / ABUSE SCORING   [emulates AbuseIPDB /check API (offline clone)]
+==========================================================================
+
+IP 45.142.213.107
+  rDNS        : mail.hydrapey.net
+  ASN/CC      : AS208475 / NL   ISP: HydraNet Hosting B.V.
+  Abuse score : 96/100   reports(90d): 311   [ACTIONABLE]
+  Case role   : phishing mail relay / bounce laundering
+
+IP 185.220.101.47
+  rDNS        : tor-exit-47.hydrapey.net
+  ASN/CC      : AS205100 / RO   ISP: HydraTor Transit
+  Abuse score : 88/100   reports(90d): 214   [ACTIONABLE]
+  Case role   : HydraRAT C2 + Tor exit (dual use)
+
+IP 103.87.12.90
+  rDNS        : ns1.aurora-hrportal.net
+  ASN/CC      : AS135318 / IN   ISP: PuneHost Cloud
+  Abuse score : 74/100   reports(90d): 96   [ACTIONABLE]
+  Case role   : clone-portal hosting (aurora-hrportal.net)
+
+IP 91.215.85.21
+  rDNS        : cdn.auroralogistics-support.com
+  ASN/CC      : AS204601 / UA   ISP: DniproHost LLC
+  Abuse score : 81/100   reports(90d): 142   [ACTIONABLE]
+  Case role   : kit CDN / MITM proxy endpoint
+
+HOP CHAIN (attacker traffic path):
+  victim browser -> 45.142.213.107 (phish relay, NL)
+  payload C2     -> 185.220.101.47:8443 (RAT C2, RO)
+  clone portal   -> 103.87.12.90 (IN) / 91.215.85.21 (UA)
+  mule banking   -> 103.87.12.0/24 device IPs (shared with clone host range!)
+
+TOTAL: 4 IPs scored; 4 actionable (score >= 60).

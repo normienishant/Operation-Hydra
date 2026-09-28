@@ -1,0 +1,19 @@
+Received: from mail.hydrapey.net (45.142.213.107) by mx.auroralogistics.in with ESMTPS id 8f2a91c4
+Received-SPF: fail (domain owner discourages this sender) client-ip=45.142.213.107;
+Authentication-Results: mx.auroralogistics.in; spf=fail smtp.mailfrom=auroralogistics.in; dkim=none; dmarc=fail (p=none, disposition=none)
+X-Mailer: PHPMailer 6.8.0
+Reply-To: hr.verify@aurora-hrportal.net
+From: Aurora HR <hr@auroralogistics.in>
+To: priya.nair@auroralogistics.in
+Date: Sat, 14 Mar 2026 09:12:04 +0530
+Subject: Urgent: Pilot Leave Roster - action needed by 15:00 IST
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+<html><body>
+<p>Dear Priya,</p>
+<p>The pilot leave roster for March has been finalised. Kindly confirm your slots on the new
+HR portal before 15:00 IST today to avoid payroll hold.</p>
+<p><a href="http://aurora-hrportal.net/login?u=priya.nair@auroralogistics.in">Confirm on HR Portal</a></p>
+<p>Regards,<br/>Aurora HR Team</p>
+</body></html>
