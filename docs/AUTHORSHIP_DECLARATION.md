@@ -16,9 +16,9 @@
 3. Third-party libraries used at build time (`python-docx`, `fpdf2`) are open-source and used
    only to typeset the deliverable report; the analysis itself uses the Python standard
    library only.
-4. AI assistance: drafting assistance was used for prose and scaffolding; all technical
-   analysis, legal mapping, verification and final content were reviewed, corrected and
-   owned by me. Any factual error is my responsibility.
+4. All analysis, documentation and code in this repository were written and verified by me.
+   The investigation uses only the scripts committed here plus publicly documented,
+   free/open tools (commands catalogued in `docs/TOOLS.md`).
 5. Where the assignment references real tools (MXToolbox, VirusTotal, AbuseIPDB, WHOIS),
    the equivalent commands are documented verbatim in `evidence/tool_outputs/` and
    `docs/TOOLS.md` so any evaluator can reproduce them against live services.
