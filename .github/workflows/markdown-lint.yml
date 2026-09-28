@@ -23,4 +23,5 @@ jobs:
 
       - name: Lint summary
         if: always()
-        run: echo "Markdown lint finished. Config: .markdownlint.yml (line-length 100, code blocks exempt)."
+        run: |
+          echo "Markdown lint finished (config - .markdownlint.yml; code blocks and tables exempt)."
