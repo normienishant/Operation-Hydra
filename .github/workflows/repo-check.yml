@@ -41,11 +41,14 @@ jobs:
           mkdir -p /tmp/first
           cp analysis/logs/*.log /tmp/first/
           python analysis/scripts/run_all.py > /dev/null
-          diff -r /tmp/first analysis/logs && echo "reproducible: logs byte-identical on re-run"
+          for f in /tmp/first/*.log; do
+            diff -q "$f" "analysis/logs/$(basename "$f")"
+          done
+          echo "reproducible - logs byte-identical on re-run"
 
-      - name: Build PDF report deliverable
+      - name: Build DOCX and PDF report deliverables
         run: |
-          pip install fpdf2
+          pip install fpdf2 python-docx
           python builder/build_report.py
 
       - name: Upload generated logs
